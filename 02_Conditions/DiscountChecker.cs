@@ -1,4 +1,4 @@
-static class RabattChecker
+static class DiscountChecker
 {
     public static void Run()
     {

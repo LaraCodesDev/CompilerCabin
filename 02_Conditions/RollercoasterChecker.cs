@@ -1,5 +1,3 @@
-using System.Net.Mail;
-
 static class RollerCoasterChecker
 {
     public static void Run()
