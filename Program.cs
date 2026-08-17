@@ -1,1 +1,1 @@
-NumberArray.Run();
+TemperatureArray.Run();
