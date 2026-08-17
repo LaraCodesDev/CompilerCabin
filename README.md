@@ -16,8 +16,8 @@ CompilerCabin documents my journey as I learn C# and software development — fr
 
 ## 📂 Project structure
 
-- `01_Grundlagen` – C# fundamentals
-- `02_Bedingungen` – exercises with conditions and logic
+- `01_Fundamentals` – C# fundamentals
+- `02_Conditions` – exercises with conditions and logic
 - `03_Arrays` – exercises with arrays and loops
 
 ## 🎯 Goal
