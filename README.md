@@ -7,18 +7,23 @@ CompilerCabin documents my journey as I learn C# and software development — fr
 ## 📚 Currently learning
 
 - Variables and data types
+- Input and output
+- Type conversion
+- Operators
 - Conditions (`if`, `else`)
 - Loops
-- Methods
 - Arrays
 - `foreach`
+- Methods
+- Method parameters
 - Basic program logic
 
-## 📂 Project structure
+## 📁 Project structure
 
-- `01_Fundamentals` – C# fundamentals
+- `01_Fundamentals` – variables, input/output, type conversion and operators
 - `02_Conditions` – exercises with conditions and logic
-- `03_Arrays` – exercises with arrays and loops
+- `03_Arrays` – exercises with arrays, loops and data analysis
+- `04_Methods` – methods, method calls and parameters
 
 ## 🎯 Goal
 
