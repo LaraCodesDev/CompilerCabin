@@ -6,19 +6,20 @@ static class temperatureScanner
 
         foreach (var zahl in temperatures)
         {
-        if (zahl < 20)
-        {
-            Console.WriteLine(zahl + " kalt");
-        }
+            if (zahl < 20)
+            {
+                Console.WriteLine(zahl + " kalt");
+            }
 
-        else if (zahl >= 30)
-        {
-            Console.WriteLine(zahl + " heiß");
-        }
+            else if (zahl >= 30)
+            {
+                Console.WriteLine(zahl + " heiß");
+            }
 
-        else
-        {
-            Console.WriteLine(zahl + " angenehm");
+            else
+            {
+                Console.WriteLine(zahl + " angenehm");
+            }
         }
     }
 }
