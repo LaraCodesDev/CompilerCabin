@@ -1,8 +1,40 @@
 class Dog
 {
-    public string Name;
-    public int Age;
-    public string Breed;
+    public string Name {get;set;}
+    private int age;
+    public int Age 
+    {
+        get
+        {
+            return age;
+        }
+        set
+        {
+            if (value >= 0)
+            {
+                age = value;
+            }
+        }
+    }
+    private string breed;
+    public string Breed 
+    {
+        get
+        {
+            return breed;
+        }
+        set
+        {
+            if (value != "")
+            {
+                breed = value;
+            }
+            else
+            {
+                Console.WriteLine("Breed cannot be empty!");
+            }
+        }
+    }
 
     public void Bark()
     {
