@@ -16,7 +16,7 @@ class Dog
             }
         }
     }
-    private string breed;
+    private string breed = "";
     public string Breed 
     {
         get

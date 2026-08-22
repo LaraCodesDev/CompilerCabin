@@ -1,1 +1,1 @@
-GameDemo.Run();
+WriteFile.Run();

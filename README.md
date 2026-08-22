@@ -4,7 +4,7 @@ Welcome to my C# learning project!
 
 CompilerCabin documents my journey as I learn C# and software development — from basic programming concepts to larger projects.
 
-## 📚 Currently learning
+## 📚 Topics covered
 
 - Variables and data types
 - Input and output
@@ -23,6 +23,12 @@ CompilerCabin documents my journey as I learn C# and software development — fr
 - Getters and setters
 - Basic validation
 - Methods inside classes
+- File handling
+- Writing files with `File.WriteAllText()`
+- Reading files with `File.ReadAllText()`
+- Appending text with `File.AppendAllText()`
+- Checking if files exist with `File.Exists()`
+- Working with file paths
 
 ## 📁 Project structure
 
@@ -31,6 +37,7 @@ CompilerCabin documents my journey as I learn C# and software development — fr
 - `03_Arrays` – exercises with arrays, loops and data analysis
 - `04_Methods` – methods, parameters and return values
 - `05_Classes` – classes, objects, constructors, properties and methods
+- `06_Files` – creating, writing, reading, appending and checking files
 
 ## 🎯 Goal
 
