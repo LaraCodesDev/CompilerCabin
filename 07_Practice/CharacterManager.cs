@@ -48,7 +48,7 @@ public static class CharacterManager
         Console.WriteLine(player.Name);
         Console.WriteLine(player.Level);
 
-        foreach (var skill in skills)
+        foreach (var skill in player.Skills)
         {
             Console.WriteLine(skill);
         }
