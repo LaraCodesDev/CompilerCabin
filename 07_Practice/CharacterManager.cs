@@ -7,6 +7,8 @@ public static class CharacterManager
 
         Begrüßung(playerName);
 
+        Console.WriteLine(GetItemText("Schwert"));
+
         Console.WriteLine("Wie ist dein Level?");
         int level = int.Parse(Console.ReadLine()??"");
 
@@ -52,11 +54,28 @@ public static class CharacterManager
         {
             Console.WriteLine(skill);
         }
+
+        List <string> items = new List<string>();
+
+        items.Add("Schwert");
+        items.Add("Schild");
+        items.Add("Trank");
+
+        foreach (var item in items)
+        {
+            Console.WriteLine(item);
+        }
+        Console.WriteLine(items.Count);
     }
         public static void Begrüßung(string playerName)
         {
             Console.WriteLine($"Willkommen {playerName}");
         }
+
+        public static string GetItemText(string item)
+    {
+        return $"Item: {item}";
+    }
     
         
 }
