@@ -66,16 +66,45 @@ public static class CharacterManager
             Console.WriteLine(item);
         }
         Console.WriteLine(items.Count);
-    }
-        public static void Begrüßung(string playerName)
+
+        
+        List <string> quests = new List<string>();
+
+        quests.Add("Finde Freddy");
+        quests.Add("Repariere die Cabin");
+        quests.Add("Besiege Kevin");
+        
+
+        AddQuest("Compiler ärgern", quests);
+
+        foreach (var quest in quests)
         {
-            Console.WriteLine($"Willkommen {playerName}");
+            Console.WriteLine(quest);
         }
 
-        public static string GetItemText(string item)
+        for (int i = 0; i < quests.Count; i++)
+        {
+            Console.WriteLine($"{i + 1}. {quests[i]}");
+        }
+    
+    }
+        
+    public static void Begrüßung(string playerName)
+    {
+        Console.WriteLine($"Willkommen {playerName}");
+    }
+
+    public static string GetItemText(string item)
     {
         return $"Item: {item}";
     }
-    
+
+    public static void AddQuest(string quest, List<string> quests)
+    {
+        quests.Add(quest);
+
+    }
+
+
         
 }
