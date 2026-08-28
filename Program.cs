@@ -1,1 +1,1 @@
-CharacterManager.Run();
+ExceptionSplitter.Run();
