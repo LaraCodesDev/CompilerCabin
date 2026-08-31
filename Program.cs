@@ -1,6 +1,5 @@
 //CharacterLoader.Run();
-Player Kevin = new Player();
-
-Kevin.PickUpItem("Potion");
-Kevin.PickUpItem("Sword");
-Kevin.ShowInventory();
+Weapon weapon = new Weapon("Sword", 25);
+CombatPlayer player = new CombatPlayer("Lara", 100, weapon);
+player.TakeDamage(100);
+player.Attack();

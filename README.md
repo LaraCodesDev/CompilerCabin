@@ -25,6 +25,9 @@ CompilerCabin documents my journey as I learn C# and software development — fr
 - Getters and setters
 - Basic validation
 - Methods inside classes
+- Class responsibilities and code structure
+- Object composition
+- Objects interacting with other objects
 - Working with `List<T>`
 - Adding items with `.Add()`
 - File handling
@@ -50,6 +53,7 @@ CompilerCabin documents my journey as I learn C# and software development — fr
 - `06_Files` – creating, writing, reading, appending and checking files
 - `07_Practice` – practice exercises combining previously learned C# concepts
 - `08_Exceptions` – exception handling with `try`, `catch` and different exception types
+- `09_OOP` – OOP practice with class responsibilities, object composition and interaction between objects
 
 ## 🎯 Goal
 
