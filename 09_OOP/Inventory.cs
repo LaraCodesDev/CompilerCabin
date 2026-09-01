@@ -1,20 +1,18 @@
-using System.Runtime.CompilerServices;
-
 public class Inventory
 {
 
-    List <string> items = new List<string>();
+    List <Item> items = new List<Item>();
 
-    public void AddItem(string item)
+    public void AddItem(Item item)
     {
         items.Add(item);
     }
 
     public void ShowItems()
     {
-        foreach (string item in items)
+        foreach (Item item in items)
         {
-            Console.WriteLine(item);
+            Console.WriteLine($" {item.Name} - {item.Value} ");
         }
     }
 }

@@ -1,112 +1,87 @@
-// OOP - Object-Oriented Programming
-// ==================================
+// 8. CUSTOM OBJECTS IN LISTS
+// --------------------------
 
-
-// 1. CLASS RESPONSIBILITIES
-// -------------------------
-// A class should have a clear responsibility.
+// A List can store objects of our own classes,
+// not only basic types like string or int.
 //
 // Example:
-// CombatPlayer -> player data, health, taking damage
-// Weapon       -> weapon data and attacking
 //
-// Things that belong together stay together.
-// Different responsibilities should be separated.
+// List<Item> items = new List<Item>();
+//
+// List<string> -> stores strings
+// List<Item>   -> stores Item objects
 
 
-// 2. OBJECTS INSIDE OTHER OBJECTS
+// 9. CLASS TYPE AND VARIABLE NAME
 // -------------------------------
-// An object can contain another object.
-//
+
 // Example:
 //
-// class CombatPlayer
-// {
-//     Weapon weapon;
-// }
+// Item item = new Item("Potion", 50);
 //
-// The CombatPlayer HAS a Weapon.
-
-
-// 3. CONSTRUCTOR WITH AN OBJECT
-// ----------------------------
-// Objects can also be passed into a constructor.
+// Item
+// -> class / type
 //
-// Example:
+// item
+// -> variable that references the object
 //
-// public CombatPlayer(string name, int health, Weapon weapon)
-// {
-//     this.name = name;
-//     this.health = health;
-//     this.weapon = weapon;
-// }
+// new Item("Potion", 50)
+// -> creates a new Item object
 //
-// "this.weapon" = field of the CombatPlayer
-// "weapon"      = parameter passed into the constructor
-
-
-// 4. OBJECT COMPOSITION
-// ---------------------
-// Combining objects like this is called composition.
-//
-// Example:
+// The same pattern also works with other classes:
 //
 // Weapon weapon = new Weapon("Sword", 25);
 //
-// CombatPlayer player =
-//     new CombatPlayer("Lara", 100, weapon);
-//
-// The Weapon exists as its own object.
-// The CombatPlayer receives and uses that Weapon.
+// Weapon -> class / type
+// weapon -> variable
 
 
-// 5. OBJECTS INTERACTING
-// ----------------------
-// One object can call a method of another object.
+// 10. PASSING OBJECTS TO METHODS
+// ------------------------------
+
+// Objects can be passed to methods as parameters.
 //
 // Example:
 //
-// public void Attack()
+// public void PickUpItem(Item item)
 // {
-//     weapon.Attack();
+//     inventory.AddItem(item);
 // }
 //
-// CombatPlayer does not need to handle the weapon's
-// attack logic itself.
+// "Item" = type of object the method expects
+// "item" = parameter containing the object
 //
-// It tells its Weapon to attack.
+// The same object can then be passed to another method:
+//
+// inventory.AddItem(item);
 
 
-// 6. METHODS AND RESPONSIBILITIES
+// 11. ACCESSING OBJECT PROPERTIES
 // -------------------------------
-// A method should usually be placed in the class
-// that is responsible for that behaviour.
+
+// An object can contain multiple properties.
 //
 // Example:
 //
-// CombatPlayer:
-// TakeDamage()
+// public string Name { get; set; }
+// public int Value { get; set; }
 //
-// Weapon:
-// Attack()
+// When we have an Item object:
 //
-// This keeps the code separated and easier to understand.
-
-
-// 7. USING THE OBJECT
-// -------------------
+// Item item = new Item("Potion", 50);
 //
-// Weapon weapon = new Weapon("Sword", 25);
-// CombatPlayer player = new CombatPlayer("Lara", 100, weapon);
+// we can access its properties with a dot:
 //
-// player.TakeDamage(25);
-// player.Attack();
+// item.Name
+// item.Value
 //
+// Example with a List:
 //
-// Flow:
+// foreach (Item item in items)
+// {
+//     Console.WriteLine($"{item.Name} - {item.Value}");
+// }
 //
-// player.Attack()
-//      ↓
-// CombatPlayer.Attack()
-//      ↓
-// weapon.Attack()
+// "items" = the whole List<Item>
+// "item"  = one Item object from the list
+// ".Name" and ".Value" = properties of that object

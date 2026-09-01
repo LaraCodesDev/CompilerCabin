@@ -28,6 +28,8 @@ CompilerCabin documents my journey as I learn C# and software development — fr
 - Class responsibilities and code structure
 - Object composition
 - Objects interacting with other objects
+- Passing objects between methods
+- Working with custom objects in `List<T>`
 - Working with `List<T>`
 - Adding items with `.Add()`
 - File handling
