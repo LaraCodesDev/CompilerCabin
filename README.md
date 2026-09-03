@@ -26,6 +26,7 @@ CompilerCabin documents my journey as I learn C# and software development — fr
 - Basic validation
 - Methods inside classes
 - Class responsibilities and code structure
+- Encapsulating data and behavior inside classes
 - Object composition
 - Objects interacting with other objects
 - Passing objects between methods
@@ -38,6 +39,10 @@ CompilerCabin documents my journey as I learn C# and software development — fr
 - Appending text with `File.AppendAllText()`
 - Checking if files exist with `File.Exists()`
 - Working with file paths
+- Reading files from directories with `Directory.GetFiles()`
+- Working with file path arrays
+- Extracting file names with `Path.GetFileName()`
+- Using verbatim strings (`@"..."`) for Windows paths
 - Basic exception handling
 - `try` and `catch`
 - Handling `FormatException`
@@ -55,7 +60,7 @@ CompilerCabin documents my journey as I learn C# and software development — fr
 - `06_Files` – creating, writing, reading, appending and checking files
 - `07_Practice` – practice exercises combining previously learned C# concepts
 - `08_Exceptions` – exception handling with `try`, `catch` and different exception types
-- `09_OOP` – OOP practice with class responsibilities, object composition and interaction between objects
+- `09_OOP` – OOP practice with class responsibilities, object composition, interaction between objects and a basic photo sorter
 
 ## 🎯 Goal
 

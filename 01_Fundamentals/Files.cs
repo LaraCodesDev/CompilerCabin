@@ -12,7 +12,6 @@ public static class Files
         // --------------------------------------------------
         // WriteAllText
         // --------------------------------------------------
-
         // Schreibt Text in eine Datei.
         // Existiert die Datei noch nicht, wird sie erstellt.
         // Existiert sie bereits, wird der alte Inhalt überschrieben.
@@ -23,7 +22,6 @@ public static class Files
         // --------------------------------------------------
         // ReadAllText
         // --------------------------------------------------
-
         // Liest den gesamten Inhalt einer Datei.
         // Der gelesene Text kann in einem string gespeichert werden.
 
@@ -35,7 +33,6 @@ public static class Files
         // --------------------------------------------------
         // AppendAllText
         // --------------------------------------------------
-
         // Fügt neuen Text am Ende einer Datei hinzu.
         // Der vorhandene Inhalt bleibt erhalten.
 
@@ -45,9 +42,9 @@ public static class Files
         // --------------------------------------------------
         // File.Exists
         // --------------------------------------------------
-
         // Prüft, ob eine Datei existiert.
         // File.Exists gibt einen bool zurück:
+        //
         // true  = Datei existiert
         // false = Datei existiert nicht
 
@@ -60,7 +57,6 @@ public static class Files
         // --------------------------------------------------
         // \n
         // --------------------------------------------------
-
         // \n erzeugt einen Zeilenumbruch innerhalb eines Strings.
 
         File.AppendAllText("hello.txt", "\nNew Line!");
@@ -69,8 +65,8 @@ public static class Files
         // --------------------------------------------------
         // PFADE
         // --------------------------------------------------
-
         // Ein Dateiname allein:
+        //
         // "hello.txt"
         //
         // bedeutet:
@@ -80,16 +76,22 @@ public static class Files
         // Einen Ordner nach oben gehen.
         //
         // Beispiel:
+        //
         // "../../../06_Files/hello.txt"
         //
         // geht drei Ordner nach oben und anschließend
         // in den Ordner 06_Files.
+        //
+        // Bei Windows-Pfaden kann @ vor dem String verwendet werden:
+        //
+        // @"L:\TestBilder"
+        //
+        // Dadurch müssen die Backslashes nicht doppelt geschrieben werden.
 
 
         // --------------------------------------------------
         // TYPISCHER ABLAUF
         // --------------------------------------------------
-
         // Erst prüfen, ob die Datei existiert.
         // Danach lesen und ausgeben.
 
@@ -98,6 +100,48 @@ public static class Files
             string content = File.ReadAllText("hello.txt");
 
             Console.WriteLine(content);
+        }
+
+
+        // --------------------------------------------------
+        // Directory.GetFiles
+        // --------------------------------------------------
+        // Holt alle Dateien aus einem Ordner.
+        //
+        // Directory.GetFiles gibt mehrere Dateipfade zurück.
+        // Deshalb können die Ergebnisse in einem string-Array
+        // gespeichert werden.
+
+        string[] files = Directory.GetFiles(@"L:\TestBilder");
+
+
+        // --------------------------------------------------
+        // Dateien mit foreach durchlaufen
+        // --------------------------------------------------
+        // Jeder Eintrag im Array ist ein vollständiger Dateipfad.
+
+        foreach (var file in files)
+        {
+            Console.WriteLine(file);
+        }
+
+
+        // --------------------------------------------------
+        // Path.GetFileName
+        // --------------------------------------------------
+        // Holt nur den Dateinamen aus einem vollständigen Pfad.
+        //
+        // Beispiel:
+        //
+        // L:\TestBilder\IMG_3817.jpg
+        //
+        // wird zu:
+        //
+        // IMG_3817.jpg
+
+        foreach (var file in files)
+        {
+            Console.WriteLine(Path.GetFileName(file));
         }
     }
 }
