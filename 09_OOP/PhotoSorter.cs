@@ -13,7 +13,13 @@ public class PhotoSorter
 
         foreach (var photo in photos)
         {
-            Console.WriteLine(Path.GetFileName(photo));
+            string extension = Path.GetExtension(photo).ToLower();
+
+            if (extension == ".jpg" || extension == ".png" ||extension == ".jpeg")
+            {
+                Console.WriteLine(Path.GetFileName(photo));
+            }
+            
         }
     }
 }

@@ -17,5 +17,5 @@ photoAlbum.AddPhoto("party.jpg");
 photoAlbum.ShowPhotos();
 Console.WriteLine(photoAlbum.GetPhotoCount());*/
 
-PhotoSorter photoSorter = new PhotoSorter(@"L:\TestBilder");
+PhotoSorter photoSorter = new PhotoSorter(@"C:\TestBilder");
 photoSorter.ShowFiles();
