@@ -1,14 +1,20 @@
 public class PhotoSorter
 {
     string sourceFolder;
+    string destinationFolder;
 
-    public PhotoSorter(string sourceFolder)
+    public PhotoSorter(string sourceFolder, string destinationFolder)
     {
         this.sourceFolder = sourceFolder;
+        this.destinationFolder = destinationFolder;
     }
 
     public void ShowFiles()
     {
+        if (!Directory.Exists(destinationFolder))
+        {
+            Directory.CreateDirectory(destinationFolder);
+        }
         string [] photos = Directory.GetFiles(sourceFolder);
 
         foreach (var photo in photos)
