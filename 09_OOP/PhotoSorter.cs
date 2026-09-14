@@ -24,6 +24,12 @@ public class PhotoSorter
             if (extension == ".jpg" || extension == ".png" ||extension == ".jpeg")
             {
                 Console.WriteLine(Path.GetFileName(photo));
+                string destinationPath = Path.Combine(destinationFolder, Path.GetFileName(photo));
+                if (File.Exists(destinationPath))
+                {
+                    Console.WriteLine("Photo already exists.");
+                }
+                Console.WriteLine(destinationPath);
             }
             
         }
