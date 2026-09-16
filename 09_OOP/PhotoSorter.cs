@@ -25,9 +25,16 @@ public class PhotoSorter
             {
                 Console.WriteLine(Path.GetFileName(photo));
                 string destinationPath = Path.Combine(destinationFolder, Path.GetFileName(photo));
+                
                 if (File.Exists(destinationPath))
                 {
                     Console.WriteLine("Photo already exists.");
+                }
+                
+                else
+                {
+                    File.Copy(photo, destinationPath);
+                    Console.WriteLine("Photo copied successfully.");    
                 }
                 Console.WriteLine(destinationPath);
             }
