@@ -26,25 +26,32 @@ public class PhotoSorter
             {
                 Console.WriteLine(Path.GetFileName(photo));
 
-                string extensionFolder = Path.Combine(destinationFolder, extension);
-                Directory.CreateDirectory(extensionFolder);
+                FileInfo fileInfo = new FileInfo(photo);
+                DateTime photoDate = fileInfo.CreationTime;
+
+                int year = photoDate.Year;
+                string monthName = photoDate.ToString("MMMM");
+
+                string yearFolder = year.ToString();
+                string yearPath = Path.Combine(destinationFolder, yearFolder);
+                string monthPath = Path.Combine(yearPath, monthName);
+
+                Directory.CreateDirectory(monthPath);
 
                 string destinationPath = Path.Combine(
-                    extensionFolder,
+                    monthPath,
                     Path.GetFileName(photo)
                 );
 
-                if (File.Exists(destinationPath))
+                if (!File.Exists(destinationPath))
                 {
-                    Console.WriteLine("Photo already exists.");
+                    File.Copy(photo, destinationPath);
+                    Console.WriteLine("Photo sorted: " + destinationPath);
                 }
                 else
                 {
-                    File.Copy(photo, destinationPath);
-                    Console.WriteLine("Photo copied successfully.");
+                    Console.WriteLine("Photo already exists");
                 }
-
-                Console.WriteLine(destinationPath);
             }
         }
     }
