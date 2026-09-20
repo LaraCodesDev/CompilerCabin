@@ -31,15 +31,19 @@ public class PhotoSorter
 
                 int year = photoDate.Year;
                 string monthName = photoDate.ToString("MMMM");
+                int day = photoDate.Day;
 
                 string yearFolder = year.ToString();
+                string dayFolder = day.ToString();
+
                 string yearPath = Path.Combine(destinationFolder, yearFolder);
                 string monthPath = Path.Combine(yearPath, monthName);
+                string dayPath = Path.Combine(monthPath, dayFolder);
 
-                Directory.CreateDirectory(monthPath);
+                Directory.CreateDirectory(dayPath);
 
                 string destinationPath = Path.Combine(
-                    monthPath,
+                    dayPath,
                     Path.GetFileName(photo)
                 );
 
