@@ -110,6 +110,41 @@ public class PhotoSorter
                     Console.WriteLine("Photo already exists");
                 }
             }
+                else if (extension == ".mp4" || extension == ".mov")
+                {
+                    string videoPath = Path.Combine(destinationFolder, "Videos");
+                    Directory.CreateDirectory(videoPath);
+
+                    FileInfo videoInfo = new FileInfo(photo);
+                    DateTime videoDate = videoInfo.CreationTime;
+
+                    int year = videoDate.Year;
+                    string monthName = videoDate.ToString("MMMM");
+                    string yearFolder = year.ToString();
+                    string yearPath = Path.Combine(videoPath, yearFolder);
+                    string monthPath = Path.Combine(yearPath, monthName);
+                    Directory.CreateDirectory(monthPath);
+                    string destinationPath = Path.Combine(monthPath,
+                    Path.GetFileName(photo));
+
+                    if (!File.Exists(destinationPath))
+                    {
+                        try
+                        {
+                            File.Copy(photo, destinationPath);
+                            Console.WriteLine("Video sorted: " + destinationPath);
+                        }
+                        catch 
+                        {
+                            Console.WriteLine("Could not copy Video");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Video already exists");
+                    }
+                }
+            
         }
     }
 }
