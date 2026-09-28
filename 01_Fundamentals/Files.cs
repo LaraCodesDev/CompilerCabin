@@ -143,5 +143,102 @@ public static class Files
         {
             Console.WriteLine(Path.GetFileName(file));
         }
+
+
+        // --------------------------------------------------
+        // Directory.Exists
+        // --------------------------------------------------
+        // Prüft, ob ein Ordner existiert.
+        //
+        // true  = Ordner existiert
+        // false = Ordner existiert nicht
+
+        if (Directory.Exists(@"L:\TestBilder"))
+        {
+            Console.WriteLine("Folder exists!");
+        }
+
+
+        // --------------------------------------------------
+        // Directory.CreateDirectory
+        // --------------------------------------------------
+        // Erstellt einen Ordner.
+        //
+        // Existiert der Ordner bereits, entsteht kein Fehler.
+
+        Directory.CreateDirectory(@"L:\TestBilder\Sorted");
+
+
+        // --------------------------------------------------
+        // Path.Combine
+        // --------------------------------------------------
+        // Verbindet mehrere Teile eines Pfades.
+        //
+        // Dadurch müssen Pfade nicht selbst mit
+        // Backslashes zusammengesetzt werden.
+
+        string folder = @"L:\TestBilder";
+        string fileName = "photo.jpg";
+
+        string fullPath = Path.Combine(folder, fileName);
+
+
+        // --------------------------------------------------
+        // Path.GetExtension
+        // --------------------------------------------------
+        // Holt die Dateiendung aus einem Dateipfad.
+        //
+        // Beispiel:
+        //
+        // photo.jpg
+        //
+        // wird zu:
+        //
+        // .jpg
+
+        string extension = Path.GetExtension(fullPath);
+
+        Console.WriteLine(extension);
+
+
+        // --------------------------------------------------
+        // File.Copy
+        // --------------------------------------------------
+        // Kopiert eine Datei von einem Pfad
+        // zu einem anderen Pfad.
+
+        string source = @"L:\TestBilder\photo.jpg";
+        string destination = @"L:\TestBilder\Sorted\photo.jpg";
+
+        if (!File.Exists(destination))
+        {
+            File.Copy(source, destination);
+        }
+
+
+        // --------------------------------------------------
+        // FileInfo
+        // --------------------------------------------------
+        // FileInfo enthält Informationen über eine Datei.
+        //
+        // Zum Beispiel:
+        // - Name
+        // - Dateipfad
+        // - Dateigröße
+        // - Erstellungsdatum
+
+        FileInfo fileInfo = new FileInfo(fullPath);
+
+
+        // --------------------------------------------------
+        // CreationTime
+        // --------------------------------------------------
+        // Gibt das Erstellungsdatum einer Datei zurück.
+        //
+        // Das Ergebnis ist ein DateTime.
+
+        DateTime creationDate = fileInfo.CreationTime;
+
+        Console.WriteLine(creationDate);
     }
 }
