@@ -17,7 +17,7 @@ namespace KevinDesktopApp;
 public partial class MainWindow : Window
 {
     int clicks = 0;
-
+    int mood = 0;
     public MainWindow()
     {
         InitializeComponent();
@@ -26,7 +26,14 @@ public partial class MainWindow : Window
     private void KevinButton_Click(object sender, RoutedEventArgs e)
     {
         clicks++;
+        mood++;
 
+        if (mood >= 5)
+        {
+            MessageBox.Show("ICH BIN EIN DESKTOP-PET, KEIN STRESSTEST FÜR DEINEN ZEIGEFINGER!!! 🤬");
+            return;
+        }
+        
         if (clicks == 1)
         {
             MessageBox.Show("FASS MICH NICHT AN! 😡");
@@ -51,5 +58,13 @@ public partial class MainWindow : Window
         {
             MessageBox.Show("... Ich werde dafür nicht genug bezahlt. 💀");
         }
+    }
+
+    private void CalmButton_Click(object sender, RoutedEventArgs e)
+    {
+        mood = 0;
+        clicks = 0;
+
+        MessageBox.Show("Puh ... endlich Ruhe. Ich vergebe dir. Vorerst. 😌");
     }
 }

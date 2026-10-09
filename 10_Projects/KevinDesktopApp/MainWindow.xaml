@@ -12,7 +12,9 @@
             <TextBlock Text="Kevin lebt." FontSize="32" HorizontalAlignment="Center"
             VerticalAlignment="Center"  />
             <Button Content="Kevin anfassen"
-        Click="KevinButton_Click" />
+            Click="KevinButton_Click" />
+            <Button Content="Kevin beruhigen"
+            Click="CalmButton_Click" />
         </StackPanel>
     </Grid>
 </Window>
